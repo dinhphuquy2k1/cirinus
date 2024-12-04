@@ -1,0 +1,49 @@
+version: "3.8"
+services:
+  w-wordpress:
+    depends_on:
+      - w-db
+    image: wordpress:latest
+    ports:
+      - '8106:80'
+    restart: always
+    volumes:
+      - ./:/var/www/html/
+    networks:
+      - w-networks
+
+  w-db:
+    image: mysql:8.0
+    container_name: w-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'wordpress'
+      MYSQL_USER: 'wordpress'
+      MYSQL_PASSWORD: '1181080029'
+      MYSQL_ROOT_PASSWORD: '1181080029'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - mysql-db:/var/lib/mysql
+    ports:
+      - "8107:3306"
+    networks:
+      - w-networks
+
+  w-phpmyadmin:
+    container_name: w-phpmyadmin
+    image: phpmyadmin:latest
+    ports:
+      - "8108:80"
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - w-networks
+
+volumes:
+  mysql-db:
+
+networks:
+  w-networks:
+    driver: bridge
+    name: w-networks
