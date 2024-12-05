@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   w-wordpress:
+    container_name: w-wordpress
     depends_on:
       - w-db
     image: wordpress:latest
