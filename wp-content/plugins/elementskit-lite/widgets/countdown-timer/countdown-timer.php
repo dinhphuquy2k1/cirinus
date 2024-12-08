@@ -1786,8 +1786,8 @@ class ElementsKit_Widget_Countdown_Timer extends Widget_Base {
 		}
 
 		$this->add_render_attribute('ekit_countdown_timer', [
-			'data-finish-title' => $this->ekit_sanitize_string(esc_attr($ekit_countdown_timer_title)),
-			'data-finish-content' => esc_attr($ekit_countdown_timer_expiry_content),
+			'data-finish-title' => wp_strip_all_tags($ekit_countdown_timer_title),
+			'data-finish-content' => wp_strip_all_tags($ekit_countdown_timer_expiry_content),
 		]);
 
 		switch ( $ekit_countdown_timer_style ) {
@@ -1820,24 +1820,4 @@ class ElementsKit_Widget_Countdown_Timer extends Widget_Base {
 		// PHPCS - the variable $markup holds safe data.
 		echo $markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
-
-	/**
-	 * Sanitize a string by removing dangerous keywords and characters.
-	 *
-	 * @param string $input The string to sanitize.
-	 * @return string The sanitized string.
-	 */
-	public function ekit_sanitize_string($input) {
-		// List of disallowed words
-		$disallowed = ['iframe', 'onload', 'alert', '=', '+'];
-		
-		// Remove dangerous keywords (case-insensitive)
-		$sanitized = str_ireplace($disallowed, '', $input);
-		
-		// Allow only alphanumeric characters, spaces, underscores, and hyphens
-		// $sanitized = preg_replace('/[^a-zA-Z0-9 _-]/', '', $sanitized);
-		
-		return $sanitized;
-	}
-	
 }

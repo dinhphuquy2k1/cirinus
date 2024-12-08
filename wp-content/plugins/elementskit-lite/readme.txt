@@ -4,7 +4,7 @@ Tags: Elementor addons, mega menu builder,  header footer builder, elementor add
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 3.3.2
+Stable tag: 3.3.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -440,6 +440,16 @@ Visit  [wpmet](https://wpmet.com/)  to learn more about how to get the best of W
 
 
 == Changelog ==
+ElementsKit Elementor Addons Version: 3.3.3 (2024-12-07)
+Added: Typography control for header search widget input
+Added: Icon size control for header search widget input
+Added: Icon space controls for left and right alignment in icon box widget
+Fixed: SVG icon color issue in icon box widget
+Fixed: Pricing table widget help text SVG icon not showing
+Fixed: Testimonial widget rating SVG icons issue
+Improved: Add inline flex alignment for post meta in blog post widget
+Improved: Removed `elementor-column-wrap` class as Elementor has deleted this deprecated CSS class
+
 ElementsKit Elementor Addons Version: 3.3.2 (2024-11-17)
 Improved: Countdown timer on expiry title sanitization
 
