@@ -418,7 +418,7 @@ h1 {
     max-width: 90vw !important;
 }
 
-.tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__month-separator+.tribe-events-calendar-list__event-row {
+.tribe-common-g-row.tribe-events-calendar-list__event-row {
     border: 1px solid #DBDBDB !important;
     border-radius: 1rem;
 }
